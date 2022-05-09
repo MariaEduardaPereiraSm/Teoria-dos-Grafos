@@ -132,13 +132,12 @@ class TestGrafo(unittest.TestCase):
         self.assertNotEqual(self.g_p, self.g_p4)
 
     def test_vertices_nao_adjacentes(self):
-        self.assertEqual(self.g_p.vertices_nao_adjacentes(),
-                         {'J-E', 'J-P', 'J-M', 'J-T', 'J-Z', 'C-Z', 'E-P', 'E-M', 'E-T', 'E-Z', 'P-M', 'P-T', 'P-Z',
-                          'M-Z'})
-        self.assertEqual(self.g_d.vertices_nao_adjacentes(), {'A-C', 'A-D', 'B-C', 'B-D', 'C-D'})
-        self.assertEqual(self.g_d2.vertices_nao_adjacentes(), {'A-B', 'A-C', 'A-D', 'B-C', 'B-D', 'C-D'})
-        self.assertEqual(self.g_c.vertices_nao_adjacentes(), set())
-        self.assertEqual(self.g_c3.vertices_nao_adjacentes(), set())
+        self.assertEqual(self.g_p.vertices_nao_adjacentes(), ['J-E', 'J-P', 'J-M', 'J-T', 'J-Z', 'C-Z', 'E-P', 'E-M', 'E-T', 'E-Z', 'P-M', 'P-T', 'P-Z',
+                          'M-Z'])
+        self.assertEqual(self.g_d.vertices_nao_adjacentes(), ['A-C', 'A-D', 'B-C', 'B-D', 'C-D'])
+        self.assertEqual(self.g_d2.vertices_nao_adjacentes(), ['A-B', 'A-C', 'A-D', 'B-C', 'B-D', 'C-D'])
+        self.assertEqual(self.g_c.vertices_nao_adjacentes(), [])
+        self.assertEqual(self.g_c3.vertices_nao_adjacentes(), [])
 
     def test_ha_laco(self):
         self.assertFalse(self.g_p.ha_laco())
@@ -193,12 +192,12 @@ class TestGrafo(unittest.TestCase):
         self.assertTrue(self.g_l1.ha_paralelas())
 
     def test_arestas_sobre_vertice(self):
-        self.assertEqual(self.g_p.arestas_sobre_vertice('J'), {'a1'})
-        self.assertEqual(self.g_p.arestas_sobre_vertice('C'), {'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7'})
-        self.assertEqual(self.g_p.arestas_sobre_vertice('M'), {'a7', 'a8'})
-        self.assertEqual(self.g_l2.arestas_sobre_vertice('B'), {'a1', 'a2', 'a3'})
-        self.assertEqual(self.g_d.arestas_sobre_vertice('C'), set())
-        self.assertEqual(self.g_d.arestas_sobre_vertice('A'), {'asd'})
+        self.assertEqual(self.g_p.arestas_sobre_vertice('J'), ['a1'])
+        self.assertEqual(self.g_p.arestas_sobre_vertice('C'), ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7'])
+        self.assertEqual(self.g_p.arestas_sobre_vertice('M'), ['a7', 'a8'])
+        self.assertEqual(self.g_l2.arestas_sobre_vertice('B'), ['a1', 'a2', 'a3'])
+        self.assertEqual(self.g_d.arestas_sobre_vertice('C'), [])
+        self.assertEqual(self.g_d.arestas_sobre_vertice('A'), ['asd'])
         with self.assertRaises(VerticeInvalidoException):
             self.g_p.arestas_sobre_vertice('A')
 
