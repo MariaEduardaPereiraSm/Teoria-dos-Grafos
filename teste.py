@@ -1,7 +1,8 @@
 from bibgrafo.grafo_lista_adjacencia import GrafoListaAdjacencia
+from meu_grafo import MeuGrafo
 
-
-paraiba = GrafoListaAdjacencia(["J", "C", "E", "P", "M", "T", "Z"])
+##paraiba = GrafoListaAdjacencia(["J", "C", "E", "P", "M", "T", "Z"])
+paraiba = MeuGrafo(['J', 'C', 'E', 'P', 'M', 'T', 'Z'])
 paraiba.adicionaAresta("a1", "J", "C")
 paraiba.adicionaAresta("a2", "C", "E")
 paraiba.adicionaAresta("a3", "C", "E")
@@ -11,8 +12,8 @@ paraiba.adicionaAresta("a6", "C", "M")
 paraiba.adicionaAresta("a7", "C", "T")
 paraiba.adicionaAresta("a8", "M", "T")
 paraiba.adicionaAresta("a9", "T", "Z")
-
 print(paraiba)
+
 
 meuGrafo = GrafoListaAdjacencia(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"])
 
@@ -35,3 +36,4 @@ meuGrafo.adicionaAresta("16", "B", "D")
 meuGrafo.adicionaAresta("17", "B", "E")
 
 print(meuGrafo)
+
