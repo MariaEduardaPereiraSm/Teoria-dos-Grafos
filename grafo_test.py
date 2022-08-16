@@ -1,6 +1,7 @@
 import unittest
-from meu_grafo_matriz_adjacencia_nao_dir import *
-#from meu_grafo import *
+#from meu_grafo_matriz_adjacencia_nao_dir import *
+from meu_grafo import *
+#from meu_grafo_matriz_adj_dir import *
 from bibgrafo.grafo_exceptions import *
 
 
@@ -282,7 +283,6 @@ class TestGrafo(unittest.TestCase):
         self.g_a = MeuGrafo(["A", "B", "C"])
         self.g_a.adicionaAresta('a1', 'A', 'B')
         self.g_a.adicionaAresta('a2', 'B', 'C')
-
     def test_adiciona_aresta(self):
         self.assertTrue(self.g_p.adicionaAresta('a10', 'J', 'C'))
         with self.assertRaises(ArestaInvalidaException):
@@ -488,5 +488,3 @@ class TestGrafo(unittest.TestCase):
         self.assertTrue(self.grafo_H.conexo())
         self.assertFalse(self.g_v1.conexo())
         self.assertFalse(self.g_d.conexo())
-
-

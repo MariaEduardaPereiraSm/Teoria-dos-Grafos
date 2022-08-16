@@ -1,7 +1,7 @@
-
 from bibgrafo.grafo_lista_adjacencia import GrafoListaAdjacencia
 from bibgrafo.grafo_exceptions import *
 from collections import deque
+from math import inf
 
 class MeuGrafo(GrafoListaAdjacencia):
 
@@ -427,9 +427,3 @@ class MeuGrafo(GrafoListaAdjacencia):
             return False
         else:
             return True
-
-    def dijkstra_drone(self, vi, vf, carga:int, carga_max:int, pontos_recarga:list()):
-        pass
-
-    def verticesAdjacentes(self):
-        pass
