@@ -98,3 +98,4 @@ class MeuGrafo(GrafoMatrizAdjacenciaNaoDirecionado):
         if self.ha_laco() or self.vertices_nao_adjacentes():
             return False
         return True
+
